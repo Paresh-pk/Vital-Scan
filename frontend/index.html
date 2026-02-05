@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALSCAN | Elite AI Health Risk Intelligence</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=2.4">
+    <link rel="stylesheet" href="/static/effects-3d.css?v=1.1">
+    <link rel="stylesheet" href="/static/wizard.css?v=1.0">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Hero Banner Section -->
+        <div class="hero-banner">
+            <div class="hero-overlay"></div>
+            <img src="/static/vitalscan_hero_banner.png" alt="Health Technology" class="hero-image">
+        </div>
+
+        <header>
+            <div class="brand">
+                <div class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2" />
+                        <path d="M20 8 L20 32 M8 20 L32 20" stroke="url(#gradient)" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <circle cx="20" cy="20" r="4" fill="url(#gradient)" />
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#2dd4bf;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1>VITALSCAN <span class="badge">ELITE AI</span></h1>
+            </div>
+            <p class="subtitle">Privacy-First Health Risk Assessment Engine</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section id="assessment-form" class="card fade-in">
+                <div class="card-header">
+                    <h2>Interactive Health Assessment</h2>
+                    <p>Answer 20 questions across 6 categories • Use arrow keys to navigate</p>
+                </div>
+
+                <form id="healthForm">
+                    <!-- Progress Indicator -->
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="progress-step active">
+                                <div class="step-circle">1</div>
+                                <span class="step-label">Vitals</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">2</div>
+                                <span class="step-label">Cardio</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">3</div>
+                                <span class="step-label">Digital</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">4</div>
+                                <span class="step-label">Lifestyle</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">5</div>
+                                <span class="step-label">Mental</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">6</div>
+                                <span class="step-label">Habits</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 1: VITALS -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon">📋</div>
+                            <div class="section-title">
+                                <h3>Vitals & Basics</h3>
+                                <p class="section-subtitle">Let's start with your basic health metrics</p>
+                            </div>
+                        </div>
+
+                        <div class="question-card">
+                            <div class="question-header">
+                                <div class="question-icon">🎂</div>
+                                <div class="question-text">
+                                    <label for="age">What is your age?</label>
+                                    <p class="question-hint">Age helps us assess age-related risk factors</p>
+                                </div>
+                            </div>
+                            <div class="input-with-unit">
+                                <input type="number" id="age" value="45" min="18" max="90" required>
+                                <span class="input-unit">years</span>
+                            </div>
+                        </div>
+
+                        <div class="question-card">
+                            <div class="question-header">
+                                <div class="question-icon">⚧</div>
+                                <div class="question-text">
+                                    <label for="gender">Gender</label>
+                                    <p class="question-hint">Biological sex assigned at birth</p>
+                                </div>
+                            </div>
+                            <select id="gender" required>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="question-card">
+                            <div class="question-header">
+                                <div class="question-icon">⚖️</div>
+                                <div class="question-text">
+                                    <label for="weight">Weight</label>
+                                    <p class="question-hint">Your current body weight</p>
+                                </div>
+                            </div>
+                            <div class="input-with-unit">
+                                <input type="number" id="weight" value="85" required>
+                                <span class="input-unit">kg</span>
+                            </div>
+                        </div>
+
+                        <div class="question-card">
+                            <div class="question-header">
+                                <div class="question-icon">📏</div>
+                                <div class="question-text">
+                                    <label for="height">Height</label>
+                                    <p class="question-hint">Your height in centimeters</p>
+                                </div>
+                            </div>
+                            <div class="input-with-unit">
+                                <input type="number" id="height" value="175" required>
+                                <span class="input-unit">cm</span>
+                            </div>
+                        </div>
+
+                        <div class="question-card">
+                            <div class="question-header">
+                                <div class="question-icon">🚬</div>
+                                <div class="question-text">
+                                    <label for="smoker_history">Smoking History</label>
+                                    <p class="question-hint">Have you ever been a regular smoker?</p>
+                                </div>
+                            </div>
+                            <select id="smoker_history">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: CARDIOMETABOLIC -->
+                    <div class="form-section">
+                        <h3>❤️ 1. Cardiometabolic Health</h3>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Q1. Treated for High BP?</label><select id="q1_bp_history">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q2. History of Diabetes?</label><select
+                                    id="q2_diabetes_history">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q3. Family Heart History?</label><select
+                                    id="q3_family_heart">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>👁️ 2. Digital & Physical</h3>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Q4. Daily Dry/Tired Eyes?</label><select id="q4_dry_eyes">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q5. Frequent Headaches?</label><select id="q5_headaches">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q6. Neck/Shoulder Stiffness?</label><select
+                                    id="q6_neck_pain">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q7. Lower Back Pain?</label><select id="q7_back_pain">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🏃 3. Lifestyle & Sleep</h3>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Q8. Sit >6h/day?</label><select id="q8_sedentary">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q9. Exercise <3x /week?</label><select id="q9_inactive">
+                                            <option value="false">No</option>
+                                            <option value="true">Yes</option>
+                                        </select></div>
+                            <div class="form-group"><label>Q10. Sleep <7h /night?</label><select id="q10_low_sleep">
+                                            <option value="false">No</option>
+                                            <option value="true">Yes</option>
+                                        </select></div>
+                            <div class="form-group"><label>Q11. Insomnia symptoms?</label><select id="q11_insomnia">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🧠 4. Mental Wellbeing</h3>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Q12. Feel Overwhelmed?</label><select id="q12_overwhelmed">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q13. Emotionally Drained?</label><select id="q13_drained">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q14. Anxious/Nervous?</label><select id="q14_anxious">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q15. Little Pleasure (Anhedonia)?</label><select
+                                    id="q15_anhedonia">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>📱 5. Habits & Symptoms</h3>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Q16. Phone in bed?</label><select id="q16_phone_bedtime">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q17. Anxiety without Internet?</label><select
+                                    id="q17_internet_anxiety">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q18. Shortness of Breath?</label><select
+                                    id="q18_breathlessness">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q19. Frequent Fatigue?</label><select id="q19_fatigue">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                            <div class="form-group"><label>Q20. Processed Food >4x/wk?</label><select id="q20_diet">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select></div>
+                        </div>
+                    </div>
+
+                    <!-- Wizard Navigation -->
+                    <div class="wizard-nav">
+                        <button type="button" id="btn-prev" class="btn-prev" style="display: none;">
+                            ← Previous
+                        </button>
+                        <button type="button" id="btn-next" class="btn-next">
+                            Next →
+                        </button>
+                    </div>
+
+                    <button type="submit" class="cta-button" style="display: none;">
+                        <span class="icon">⚡</span> Analyze Risks
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-view" class="hidden">
+                <div class="summary-card card scanner-active">
+                    <div class="score-ring-container">
+                        <svg class="progress-ring" width="200" height="200" viewBox="0 0 200 200">
+                            <circle class="progress-ring__circle" stroke="rgba(255,255,255,0.1)" stroke-width="10"
+                                fill="transparent" r="85" cx="100" cy="100" />
+                            <circle class="progress-ring__circle progress-value" stroke="var(--accent)"
+                                stroke-width="10" fill="transparent" r="85" cx="100" cy="100" />
+                        </svg>
+                        <div class="score-text">
+                            <span id="overall-score-display">0.0</span>
+                            <small>RISK INDEX</small>
+                        </div>
+                    </div>
+                    <div class="summary-text">
+                        <h3>Assessment Complete</h3>
+                        <p>Privacy-ID: <span id="assessment-id" class="mono">...</span></p>
+                    </div>
+                    <button id="reset-btn" class="secondary-button">New Scan</button>
+                </div>
+
+                <div id="risk-cards-container" class="risk-grid">
+                    <!-- Cards injected by JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/wizard.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

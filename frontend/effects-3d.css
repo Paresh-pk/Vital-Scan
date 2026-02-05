@@ -1,0 +1,165 @@
+/* ========================================
+   3D HEALTH-TECH VISUAL ENHANCEMENTS
+   ======================================== */
+
+/* Scanner Animation - Medical Diagnostic Feel */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(56, 189, 248, 0.3) 20%,
+            rgba(56, 189, 248, 0.8) 50%,
+            rgba(56, 189, 248, 0.3) 80%,
+            transparent 100%);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+    animation: medicalScan 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes medicalScan {
+    0% {
+        top: -5%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    50% {
+        top: 50%;
+        opacity: 0.8;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 105%;
+        opacity: 0;
+    }
+}
+
+/* 3D Floating Animation for Header */
+header h1 {
+    animation: float3D 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes float3D {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateX(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotateX(3deg);
+    }
+}
+
+/* Perspective Tilt on Card Hover */
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) rotateX(2deg) scale(1.01);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Pulsing Glow on Score Ring */
+.progress-ring__circle.progress-value {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.8));
+    }
+}
+
+/* DNA Helix Background Pattern (Subtle) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 100px,
+            rgba(56, 189, 248, 0.01) 100px,
+            rgba(56, 189, 248, 0.01) 102px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Holographic Shimmer on Badge */
+.badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* Risk Cards 3D Lift */
+.risk-item {
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.risk-item:hover {
+    transform: translateY(-4px) translateZ(10px);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* Loading Spinner Enhancement */
+.spinner {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
